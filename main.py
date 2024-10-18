@@ -16,6 +16,10 @@ from utility import check_password
 from crewai import Agent, Task, Crew
 from crewai_tools import WebsiteSearchTool
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 # load environment variables from .env file
 load_dotenv('.env')
 
