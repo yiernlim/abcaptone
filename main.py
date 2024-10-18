@@ -21,10 +21,11 @@ import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # load environment variables from .env file
-load_dotenv('.env')
+#load_dotenv('.env')
 
 # Retrieve the OpenAI API key from the environment variables
-openai.api_key = os.getenv("OPENAI_API_KEY")
+#openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key=openai.api_key)
 
 # Define CPF Interest Rates
